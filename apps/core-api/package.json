@@ -1,0 +1,10 @@
+{
+  "name": "@workora/core-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@workora/config": "0.1.0",
+    "@workora/logger": "0.1.0"
+  }
+}

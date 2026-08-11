@@ -1,0 +1,3 @@
+{
+  "extends": "@workora/tsconfig/tsconfig.json"
+}
