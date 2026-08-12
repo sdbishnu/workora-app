@@ -1,6 +1,8 @@
 import { initializeConfig } from "@workora/config";
 import { WorkoraError, WORKORA_ERROR_CODES, WORKORA_ERROR_CATEGORIES, serializeWorkoraError } from "@workora/errors";
 import { createLogger, createLoggerConfig } from "@workora/logger";
+import { safeValidate } from "@workora/validation";
+import { z } from "zod";
 
 const config = initializeConfig();
 
@@ -19,5 +21,22 @@ const startupError = new WorkoraError(WORKORA_ERROR_CODES.UNKNOWN, "Core API err
 
 logger.info("Core API error foundation initialized", serializeWorkoraError(startupError));
 
+const startupSchema = z.object({
+  service: z.string().min(1),
+  port: z.number().positive()
+});
+
+const validationResult = safeValidate(startupSchema, {
+  service: "core-api",
+  port: config.APP_CONFIG.port
+});
+
+if (!validationResult.success) {
+  throw new Error("Core API startup validation failed.");
+}
+
+logger.info("Core API validation foundation initialized", validationResult.data);
+
 export { config, logger };
 export { WorkoraError, WORKORA_ERROR_CODES, WORKORA_ERROR_CATEGORIES, serializeWorkoraError };
+export { safeValidate };

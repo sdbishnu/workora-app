@@ -6,6 +6,7 @@
   "dependencies": {
     "@workora/config": "0.1.0",
     "@workora/errors": "0.1.0",
-    "@workora/logger": "0.1.0"
+    "@workora/logger": "0.1.0",
+    "@workora/validation": "0.1.0"
   }
 }
