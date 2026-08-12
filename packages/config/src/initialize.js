@@ -12,7 +12,7 @@ export function initializeConfig() {
     }
     const environment = loadEnvironment();
     const APP_CONFIG = createAppConfig(environment);
-    const DATABASE_CONFIG = createDatabaseConfig();
+    const DATABASE_CONFIG = createDatabaseConfig(environment);
     const REDIS_CONFIG = createRedisConfig();
     const AUTH_CONFIG = createAuthConfig();
     const TENANT_CONFIG = createTenantConfig(environment);
