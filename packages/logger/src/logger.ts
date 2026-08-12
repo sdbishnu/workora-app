@@ -1,4 +1,4 @@
-export type LogMetadata = Readonly<Record<string, unknown>>;
+export type LogMetadata = object;
 
 export interface Logger {
   readonly trace: (message: string, metadata?: LogMetadata) => void;

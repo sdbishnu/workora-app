@@ -1,4 +1,5 @@
 import { initializeConfig } from "@workora/config";
+import { WorkoraError, WORKORA_ERROR_CODES, WORKORA_ERROR_CATEGORIES, serializeWorkoraError } from "@workora/errors";
 import { createLogger, createLoggerConfig } from "@workora/logger";
 
 const config = initializeConfig();
@@ -11,6 +12,12 @@ const loggerConfig = createLoggerConfig({
 
 const logger = createLogger(loggerConfig);
 
-logger.info("Core API configuration initialized");
+const startupError = new WorkoraError(WORKORA_ERROR_CODES.UNKNOWN, "Core API error foundation initialized.", {
+  category: WORKORA_ERROR_CATEGORIES.SYSTEM,
+  metadata: { service: "core-api" }
+});
+
+logger.info("Core API error foundation initialized", serializeWorkoraError(startupError));
 
 export { config, logger };
+export { WorkoraError, WORKORA_ERROR_CODES, WORKORA_ERROR_CATEGORIES, serializeWorkoraError };

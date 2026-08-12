@@ -1,3 +1,10 @@
 {
-  "extends": "@workora/tsconfig/tsconfig.json"
+  "extends": "@workora/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "src",
+    "noEmit": false,
+    "types": ["node"]
+  },
+  "exclude": []
 }
