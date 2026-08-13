@@ -1,1 +1,1 @@
-// Public package entry point.
+export { httpClient } from "./client/http-client.js"; 

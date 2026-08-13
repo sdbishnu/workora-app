@@ -8,6 +8,8 @@ export function normalizeEnvironment(environment) {
         DATABASE_PORT: environment.DATABASE_PORT,
         DATABASE_NAME: environment.DATABASE_NAME.trim(),
         DATABASE_USER: environment.DATABASE_USER.trim(),
-        DATABASE_PASSWORD: environment.DATABASE_PASSWORD
+        DATABASE_PASSWORD: environment.DATABASE_PASSWORD,
+        REDIS_HOST: environment.REDIS_HOST.trim(),
+        REDIS_PORT: environment.REDIS_PORT
     };
 }

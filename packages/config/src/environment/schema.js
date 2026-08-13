@@ -15,5 +15,7 @@ export const environmentSchema = z.object({
     DATABASE_PORT: z.coerce.number().int().positive(),
     DATABASE_NAME: z.string().trim().min(1),
     DATABASE_USER: z.string().trim().min(1),
-    DATABASE_PASSWORD: z.string().min(1)
+    DATABASE_PASSWORD: z.string().min(1),
+    REDIS_HOST: z.string().trim().min(1),
+    REDIS_PORT: z.coerce.number().int().positive()
 });

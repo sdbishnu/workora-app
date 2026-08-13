@@ -10,5 +10,11 @@
       "types": "./src/index.ts",
       "import": "./src/index.js"
     }
+  },
+  "dependencies": {
+    "axios": "^1.19.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
   }
 }

@@ -10,5 +10,17 @@
       "types": "./src/index.ts",
       "import": "./src/index.js"
     }
+  },
+  "scripts": {
+    "db:migrate": "drizzle-kit migrate --config drizzle.config.ts",
+    "db:generate": "drizzle-kit generate --config drizzle.config.ts"
+  },
+  "dependencies": {
+    "@workora/config": "^0.1.0",
+    "drizzle-orm": "^0.45.2",
+    "postgres": "^3.4.9"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.10"
   }
 }
